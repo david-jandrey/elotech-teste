@@ -43,7 +43,7 @@ public class PessoaService {
                             .nome(contatoDTO.getNome())
                             .telefone(contatoDTO.getTelefone())
                             .email(contatoDTO.getEmail())
-                            .pessoaEntity(pessoa) // Define a pessoa associada ao contato
+                            .pessoaEntity(pessoa)
                             .build();
                     return contato;
                 })
