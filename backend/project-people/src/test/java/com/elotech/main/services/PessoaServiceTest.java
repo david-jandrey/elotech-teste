@@ -64,7 +64,6 @@ public class PessoaServiceTest {
     @Test
     void testCriarPessoaComSucesso() {
 
-        // Criar uma PessoaDTO simulada
         List<ListaContatoDTO> listaContatos = new ArrayList<>();
         listaContatos.add(new ListaContatoDTO(null, "david", "123456789", "david@gmail.com"));
         PessoaDTO pessoaDTO = new PessoaDTO("matheus", "49761482030", new Date(), listaContatos);
@@ -113,7 +112,7 @@ public class PessoaServiceTest {
         pessoaDTO.setListaContatos(listaContatosDTO);
 
         pessoaService.atualizarPessoaEListaContato(idExistente, pessoaDTO);
-        
+
         verify(pessoaRepository, times(1)).save(any());
     }
 
