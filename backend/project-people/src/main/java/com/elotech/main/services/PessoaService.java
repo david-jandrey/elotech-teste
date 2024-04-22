@@ -84,40 +84,17 @@ public class PessoaService {
         pessoaRepository.deleteById(id);
     }
 
-    public PessoaEntity atualizarPessoaEListaContato(UUID id, PessoaDTO pessoaDTO) {
+    public PessoaEntity atualizarPessoa(UUID id, PessoaDTO pessoaDTO) {
+
+        this.ValidaCPF(pessoaDTO.getCpf());
+        this.validaDataNascimento(pessoaDTO.getDataNascimento());
+
         PessoaEntity pessoaExistente = pessoaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Pessoa não encontrada com o ID: " + id));
 
         pessoaExistente.setNome(pessoaDTO.getNome());
         pessoaExistente.setCpf(pessoaDTO.getCpf());
         pessoaExistente.setDataNascimento(pessoaDTO.getDataNascimento());
-
-        List<ListaContatoEntity> listaContatosAtualizados = pessoaDTO.getListaContatos().stream()
-                .map(listaContatoDTO -> {
-                    ListaContatoEntity listaContatoExistente = null;
-                    try {
-                        listaContatoExistente = pessoaExistente.getListaContatos().stream()
-                                .filter(contato -> {
-                                    if (contato != null && contato.getId() != null) {
-                                        return contato.getId().equals(listaContatoDTO.getId());
-                                    }
-                                    return false;
-                                })
-                                .findFirst()
-                                .orElseThrow(() -> new RuntimeException("Lista de Contato não encontrado com o ID: " + listaContatoDTO.getId()));
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
-
-                    listaContatoExistente.setNome(listaContatoDTO.getNome());
-                    listaContatoExistente.setTelefone(listaContatoDTO.getTelefone());
-                    listaContatoExistente.setEmail(listaContatoDTO.getEmail());
-
-                    return listaContatoExistente;
-                })
-                .collect(Collectors.toList());
-
-        pessoaExistente.setListaContatos(listaContatosAtualizados);
 
         return pessoaRepository.save(pessoaExistente);
     }

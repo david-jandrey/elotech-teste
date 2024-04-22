@@ -1,0 +1,38 @@
+.navbar {
+  background-color: #333;
+  color: #fff; 
+  padding: 10px 0;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.5rem; /* Tamanho da fonte do logo */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px; /* Espaçamento entre os itens do menu */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff; /* Cor dos links */
+}
+
+.nav-links li a:hover {
+  color: #ffd700; /* Cor dos links ao passar o mouse */
+}

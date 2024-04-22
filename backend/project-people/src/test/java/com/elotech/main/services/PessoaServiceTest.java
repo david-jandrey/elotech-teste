@@ -107,11 +107,9 @@ public class PessoaServiceTest {
         when(pessoaRepository.findById(idExistente)).thenReturn(Optional.of(pessoaExistente));
 
         PessoaDTO pessoaDTO = new PessoaDTO("new david jandrey", "78475069045", new Date(), Collections.emptyList());
-        List<ListaContatoDTO> listaContatosDTO = new ArrayList<>();
-        listaContatosDTO.add(new ListaContatoDTO(contatoExistente.getId(), "Novo Blue pen", "987654321", "blue.pen@gmail.com"));
-        pessoaDTO.setListaContatos(listaContatosDTO);
 
-        pessoaService.atualizarPessoaEListaContato(idExistente, pessoaDTO);
+
+        pessoaService.atualizarPessoa(idExistente, pessoaDTO);
 
         verify(pessoaRepository, times(1)).save(any());
     }

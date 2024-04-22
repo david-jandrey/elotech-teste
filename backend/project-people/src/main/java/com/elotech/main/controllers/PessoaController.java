@@ -19,6 +19,7 @@ public class PessoaController {
     @Autowired
     private PessoaService pessoaService;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("")
     public ResponseEntity<Object> criarPessoa(@Valid @RequestBody PessoaDTO pessoaDTO){
         try{
@@ -30,6 +31,7 @@ public class PessoaController {
 
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/{id}")
     public ResponseEntity<Object> buscarPessoaPorId(@PathVariable UUID id) {
         try {
@@ -39,7 +41,7 @@ public class PessoaController {
             return ResponseEntity.notFound().build();
         }
     }
-
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/page")
     public ResponseEntity<Page<PessoaEntity>> buscarPessoasPaginadas(
             @RequestParam(defaultValue = "0") int page,
@@ -54,6 +56,7 @@ public class PessoaController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deletarPessoa(@PathVariable UUID id){
         try{
@@ -64,10 +67,11 @@ public class PessoaController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/{id}")
-    public ResponseEntity<Object> atualizarPessoaEContatos(@PathVariable UUID id, @Valid @RequestBody PessoaDTO pessoaDTO) {
+    public ResponseEntity<Object> atualizarPessoa(@PathVariable UUID id, @Valid @RequestBody PessoaDTO pessoaDTO) {
         try {
-            PessoaEntity pessoaAtualizada = pessoaService.atualizarPessoaEListaContato(id, pessoaDTO);
+            PessoaEntity pessoaAtualizada = pessoaService.atualizarPessoa(id, pessoaDTO);
             return ResponseEntity.ok().body(pessoaAtualizada);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
