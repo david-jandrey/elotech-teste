@@ -22,7 +22,8 @@ caso queira testa a só o backend via postman/insominia pode acessar
 https://elotech-teste.onrender.com/pessoa
 
 exemplo do post de pessoa via insominia
-![image](https://github.com/david-jandrey/elotech-teste/assets/56413390/24df1656-b16f-4fe1-a23e-0d8aa1073da9)
+![image](https://github.com/david-jandrey/elotech-teste/assets/56413390/12f15a04-a757-4720-b0fb-f9093eb2ee7b)
+
 
 não deu tempo de fazer o swagger para documentar as api
 
