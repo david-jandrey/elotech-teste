@@ -20,7 +20,6 @@ public class ListaContatoController {
     @Autowired
     private LIstaContatoService lIstaContatoService;
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deletarContato(@PathVariable UUID id){
         try{
@@ -31,7 +30,6 @@ public class ListaContatoController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/{id}")
     public ResponseEntity<Object> atualizarListaContato(@PathVariable UUID id, @Valid @RequestBody ListaContatoDTO listaContatoDTO) {
         try {
@@ -42,7 +40,6 @@ public class ListaContatoController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("pessoa/{id}")
     public ResponseEntity<Object> criaContato(@PathVariable UUID id, @Valid @RequestBody ListaContatoDTO listaContatoDTO) {
         try {

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.elotech</groupId>
 	<artifactId>project-people</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>project-people</name>
 	<description>projeto teste elotech</description>
 	<properties>
