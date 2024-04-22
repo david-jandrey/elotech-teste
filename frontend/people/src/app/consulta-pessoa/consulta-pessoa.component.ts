@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule  } from '@angular/common';
-import { FormControl, FormGroup, FormArray, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
@@ -55,7 +55,6 @@ export class ConsultaPessoaComponent {
     }
     cpf = cpf.replace(/\D/g, '');
     
-    // Verifica se o CPF tem 11 dígitos
     if (cpf.length !== 11) {
         throw new Error('CPF inválido');
     }

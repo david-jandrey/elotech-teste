@@ -67,10 +67,7 @@ export class CadastroPessoaComponent {
   }
 
   formatarCPF(cpf: string): string {
-    // Remove caracteres não numéricos
     cpf = cpf.replace(/\D/g, '');
-    
-    // Verifica se o CPF tem 11 dígitos
     if (cpf.length !== 11) {
         throw new Error('CPF inválido');
     }

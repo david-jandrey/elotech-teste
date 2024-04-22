@@ -1,7 +1,7 @@
 import { Component  } from '@angular/core';
 import { CommonModule  } from '@angular/common';
-import { FormControl, FormGroup, FormArray, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 
 interface PessoaForm {
@@ -194,12 +194,5 @@ AtualizaPessoa() {
           this.toastService.error("Erro ao atualizar contato. verifique se os dados estão corretos!");
         }
       );
-  
-    
-  
   }
-
-  
-  
-
 }
