@@ -1,6 +1,9 @@
 para testa a aplicação só acessar 
 link(https://hilarious-unicorn-4b63fc.netlify.app)
 
+só precisa de um pouco de paciencia que o backend demora um pouco para retorna de primeira,
+mas depois da primeira requisição vai rapido
+
 o frontend fiz deploy no netlify 
 
 e backend no render
