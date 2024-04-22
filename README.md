@@ -29,23 +29,7 @@ exemplo do post de pessoa via insominia
 ![image](https://github.com/david-jandrey/elotech-teste/assets/56413390/12f15a04-a757-4720-b0fb-f9093eb2ee7b)
 
 
-não deu tempo de fazer o swagger para documentar as api
-
-caso queira rodar local frontend npm install e o ng-serve
-
-Front end usei o angular 17 mesmo
-
-backend usei java 17
-
-para rodar local  só executar o mvn clean install e mvn spring-boot:run
-
-obs: vai ter criar um banco local..
-
-o front tentei deixar mais funcional não ficou bonito sorry
-
-Dúvidas só chamar
-
-não deu tempo de fazer o swagger para documentar as api
+não deu tempo de fazer o swagger para documentar as apis
 
 caso queira rodar local frontend npm install e o ng-serve
 
